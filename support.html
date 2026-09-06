@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Logger — Поддержка</title>
+  <style>
+    :root {
+      --accent: #FF5E00;
+      --bg: #FFF7F0;
+      --text: #1c1c1e;
+      --muted: #6b6b70;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-text-size-adjust: 100%;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
+    header { text-align: center; margin-bottom: 28px; }
+    h1 { font-size: 1.7rem; margin: 0 0 6px; }
+    .sub { color: var(--muted); font-size: 1rem; margin: 0; }
+    .contact {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin: 0 0 28px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+    }
+    .contact a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
+    h2 { font-size: 1.25rem; margin: 28px 0 14px; }
+    .faq {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 6px 22px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+    }
+    .q { font-weight: 600; margin: 18px 0 4px; }
+    .a { margin: 0 0 18px; color: #2c2c2e; }
+    footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 36px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Food Logger — Поддержка</h1>
+      <p class="sub">Дневник калорий и расходов</p>
+    </header>
+
+    <div class="contact">
+      Есть вопрос, нашли ошибку или хотите предложить улучшение? Напишите нам:
+      <br>
+      <!-- Чтобы сменить адрес поддержки, поменяйте его в двух местах ниже (href и текст). -->
+      <a href="mailto:goodeats@icloud.com">goodeats@icloud.com</a>
+      <br>
+      Отвечаем в течение нескольких дней.
+    </div>
+
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <p class="q">Как добавить запись в дневник?</p>
+      <p class="a">Нажмите кнопку «плюс» внизу экрана, выберите продукт, активность или шаблон, укажите количество, проверьте чекбокс «Съедено» и подтвердите кнопкой «Готово».</p>
+
+      <p class="q">Как вести учёт расходов на питание?</p>
+      <p class="a">Включите учёт расходов в Настройках. При первом добавлении продукта укажите его цену, дальше расходы считаются автоматически вместе с калориями.</p>
+
+      <p class="q">Как пользоваться голосовым вводом?</p>
+      <p class="a">Откройте каталог, включите микрофон и произнесите название продукта для поиска, потом количество. Полный список голосовых команд есть в справке приложения.</p>
+
+      <p class="q">Как отсканировать этикетку?</p>
+      <p class="a">Наведите камеру на упаковку в месте расположения данных о пищевой ценности, приложение распознает калории и нутриенты.</p>
+
+      <p class="q">Можно ли планировать питание заранее?</p>
+      <p class="a">Да. Заполните день наперёд, уберая галочку в чекбоксе «Съедено» в форме ввода. Альтернативно - скопируйте записи  из другого дня и отмечайте «Съедено» по ходу дня.</p>
+
+      <p class="q">Где хранятся мои данные?</p>
+      <p class="a">Только на вашем устройстве. Приложение не требует регистрации, не собирает и не передаёт ваши данные.</p>
+
+    </div>
+
+    <footer>
+      Food Logger
+    </footer>
+  </div>
+</body>
+</html>
