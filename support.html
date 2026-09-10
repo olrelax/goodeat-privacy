@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Logger — Поддержка</title>
+  <title>Food Logger — Support</title>
   <style>
     :root {
       --accent: #FF5E00;
@@ -21,7 +21,19 @@
       line-height: 1.55;
       -webkit-text-size-adjust: 100%;
     }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 24px 20px 64px; }
+    .lang { text-align: right; margin-bottom: 8px; }
+    .lang button {
+      border: 1px solid rgba(0,0,0,0.15);
+      background: transparent;
+      color: var(--muted);
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      margin-left: 6px;
+    }
+    .lang button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
     header { text-align: center; margin-bottom: 28px; }
     h1 { font-size: 1.7rem; margin: 0 0 6px; }
     .sub { color: var(--muted); font-size: 1rem; margin: 0; }
@@ -44,47 +56,96 @@
     .q { font-weight: 600; margin: 18px 0 4px; }
     .a { margin: 0 0 18px; color: #2c2c2e; }
     footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 36px; }
+    [data-lang] { display: none; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <h1>Food Logger - Поддержка</h1>
-      <p class="sub">Дневник калорий и расходов</p>
-    </header>
-
-    <div class="contact">
-      Есть вопрос, нашли ошибку или хотите предложить улучшение? Напишите нам:
-      <br>
-      <!-- Чтобы сменить адрес поддержки, поменяйте его в двух местах ниже (href и текст). -->
-      <a href="mailto:goodeatsapp@icloud.com">goodeatsapp@icloud.com</a>
+    <div class="lang">
+      <button id="btn-ru" onclick="setLang('ru')">Русский</button>
+      <button id="btn-en" onclick="setLang('en')">English</button>
     </div>
 
-    <h2>Частые вопросы</h2>
-    <div class="faq">
-      <p class="q">Как добавить запись в дневник?</p>
-      <p class="a">Нажмите кнопку «плюс» внизу экрана, выберите продукт, активность или шаблон, укажите количество, проверьте чекбокс «Съедено» и подтвердите кнопкой «Готово».</p>
-
-      <p class="q">Как вести учёт расходов на питание?</p>
-      <p class="a">Включите учёт расходов в Настройках. При первом добавлении продукта укажите его цену, дальше расходы считаются автоматически вместе с калориями.</p>
-
-      <p class="q">Как пользоваться голосовым вводом?</p>
-      <p class="a">Откройте каталог, включите микрофон и произнесите название продукта для поиска, потом количество. Полный список голосовых команд есть в справке приложения.</p>
-
-      <p class="q">Как отсканировать этикетку?</p>
-      <p class="a">Наведите камеру на упаковку в месте расположения данных о пищевой ценности, приложение распознает калории и нутриенты.</p>
-
-      <p class="q">Можно ли планировать питание заранее?</p>
-      <p class="a">Да. Заполните день наперёд, уберая галочку в чекбоксе «Съедено» в форме ввода. Альтернативно - скопируйте записи  из другого дня и отмечайте «Съедено» по ходу дня.</p>
-
-      <p class="q">Где хранятся мои данные?</p>
-      <p class="a">Только на вашем устройстве. Приложение не требует регистрации, не собирает и не передаёт ваши данные.</p>
-
+    <!-- Russian -->
+    <div data-lang="ru">
+      <header>
+        <h1>Food Logger — Поддержка</h1>
+        <p class="sub">Дневник калорий и расходов</p>
+      </header>
+      <div class="contact">
+        Есть вопрос, нашли ошибку или хотите предложить улучшение? Напишите нам:
+        <br>
+        <!-- Чтобы сменить адрес поддержки, поменяйте его в mailto ниже (в обоих языках). -->
+        <a href="mailto:goodeats@icloud.com">goodeats@icloud.com</a>
+        <br>
+        Отвечаем в течение нескольких дней.
+      </div>
+      <h2>Частые вопросы</h2>
+      <div class="faq">
+        <p class="q">Как добавить запись в дневник?</p>
+        <p class="a">Нажмите кнопку «плюс» внизу экрана, выберите продукт, активность или шаблон, укажите количество и подтвердите.</p>
+        <p class="q">Как включить учёт расходов на питание?</p>
+        <p class="a">Включите учёт расходов в Настройках. При первом добавлении продукта укажите его цену, дальше расходы считаются автоматически вместе с калориями.</p>
+        <p class="q">Как пользоваться голосовым вводом?</p>
+        <p class="a">Откройте каталог, включите микрофон и произнесите название продукта и количество. Распознавание работает на устройстве. Список голосовых команд есть в справке приложения.</p>
+        <p class="q">Как отсканировать этикетку?</p>
+        <p class="a">Наведите камеру на таблицу пищевой ценности на упаковке, приложение распознает калории и нутриенты. Сканируется текст этикетки, а не штрихкод.</p>
+        <p class="q">Можно ли планировать питание заранее?</p>
+        <p class="a">Да. Заполните день наперёд или скопируйте его из другого дня и отмечайте съеденное по ходу дня.</p>
+        <p class="q">Где хранятся мои данные?</p>
+        <p class="a">Только на вашем устройстве. Приложение не требует регистрации, не собирает и не передаёт ваши данные.</p>
+        <p class="q">Сколько стоит приложение?</p>
+        <p class="a">Бесплатно, без встроенных покупок и рекламы. Все функции открыты.</p>
+      </div>
     </div>
 
-    <footer>
-      Food Logger
-    </footer>
+    <!-- English -->
+    <div data-lang="en">
+      <header>
+        <h1>Food Logger — Support</h1>
+        <p class="sub">Calorie and cost diary</p>
+      </header>
+      <div class="contact">
+        Have a question, found a bug, or want to suggest an improvement? Email us:
+        <br>
+        <a href="mailto:goodeats@icloud.com">goodeats@icloud.com</a>
+        <br>
+        We reply within a few days.
+      </div>
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <p class="q">How do I add an entry to the log?</p>
+        <p class="a">Tap the plus button at the bottom of the screen, pick a food, activity or template, enter the amount and confirm.</p>
+        <p class="q">How do I turn on food cost tracking?</p>
+        <p class="a">Enable cost tracking in Settings. Enter a product's price the first time you add it, and cost is then tracked automatically along with calories.</p>
+        <p class="q">How does voice input work?</p>
+        <p class="a">Open the library, turn on the microphone and say the product name and amount. Recognition runs on-device. The full list of voice commands is in the in-app help.</p>
+        <p class="q">How do I scan a label?</p>
+        <p class="a">Point the camera at the nutrition facts panel on the package and the app reads the calories and nutrients. It scans the label text, not a barcode.</p>
+        <p class="q">Can I plan meals ahead?</p>
+        <p class="a">Yes. Fill in a day in advance or copy it from another day, and check off what you actually ate as the day goes on.</p>
+        <p class="q">Where is my data stored?</p>
+        <p class="a">Only on your device. The app requires no sign-up and does not collect or share your data.</p>
+        <p class="q">How much does the app cost?</p>
+        <p class="a">It is free, with no in-app purchases and no ads. Every feature is unlocked.</p>
+      </div>
+    </div>
+
+    <footer>Food Logger</footer>
   </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(function (el) {
+        el.style.display = (el.getAttribute('data-lang') === lang) ? 'block' : 'none';
+      });
+      document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+    }
+    // Default to the browser language (English for non-Russian visitors).
+    var initial = (navigator.language || 'en').toLowerCase().indexOf('ru') === 0 ? 'ru' : 'en';
+    setLang(initial);
+  </script>
 </body>
 </html>
