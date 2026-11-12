@@ -1,1 +1,20 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>GoodEats VkusVill OAuth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <p>Returning to GoodEats...</p>
 
+  <script>
+    const appUrl = "goodeats://oauth/vkusvill" + window.location.search + window.location.hash;
+    window.location.replace(appUrl);
+  </script>
+
+  <p>
+    If GoodEats did not open, return to the app manually.
+  </p>
+</body>
+</html>
